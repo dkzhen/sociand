@@ -3,7 +3,7 @@ import { avatarImg } from "../public";
 export default function Navbar() {
   return (
     <>
-      <nav className="bg-primary items-center text-white  flex flex-row justify-between ">
+      <nav className="bg-primary items-center text-white px-4 md:ox-0 flex flex-row justify-between ">
         <section
           className="font-Roboto font-semibold pl-3 md:pl-10 md:text-2xl text-lg"
           id="logo"

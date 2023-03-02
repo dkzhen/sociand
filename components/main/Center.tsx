@@ -33,7 +33,7 @@ export default function Center() {
     },
   ];
   return (
-    <main className="lg:px-28 px-3 flex flex-col py-8 mt-20 ">
+    <main className="lg:px-28 px-3 flex flex-col py-8 mt-10 md:mb-0 mb-10 md:mt-20 ">
       <section
         id="create-post"
         className="flex flex-col border rounded-lg bg-primary "
