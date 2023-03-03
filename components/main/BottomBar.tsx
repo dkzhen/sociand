@@ -32,7 +32,7 @@ export default function BottomBar() {
         <Link
           href={"/explore"}
           id="explore"
-          className={`  hover:text-primaryRed cursor-pointer  ${
+          className={` pt-1 hover:text-primaryRed cursor-pointer  ${
             page == "/explore" ? "text-primaryRed" : "text-white"
           }`}
         >
