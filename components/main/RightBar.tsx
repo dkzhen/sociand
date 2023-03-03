@@ -17,24 +17,22 @@ export default function RightBar() {
       nama: "Putra",
     },
     {
-      id: 3,
+      id: 4,
       nama: "Putra",
     },
     {
-      id: 3,
+      id: 5,
       nama: "Putra",
     },
     {
-      id: 3,
+      id: 6,
       nama: "Putra",
     },
     {
-      id: 3,
+      id: 7,
       nama: "Putra",
     },
   ];
-  const no = datas.length;
-  console.log({ no });
 
   return (
     <>

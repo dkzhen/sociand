@@ -1,10 +1,22 @@
-import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function LeftBar() {
+  const router = useRouter();
+  const page: string = router.asPath;
+
   return (
     <>
-      <aside className="px-6 lg:px-10 py-8 mt-20 hidden md:flex flex-col space-y-10  ">
-        <div id="notification">
+      <aside
+        className={`px-6 lg:px-10 py-8 mt-20 hidden items-center lg:ml-10 ml-5 md:flex flex-col space-y-12 font-poppins `}
+      >
+        <Link
+          href={"notification"}
+          id="notification"
+          className={`  hover:text-primaryRed cursor-pointer  ${
+            page == "/notification" ? "text-primaryRed" : "text-white"
+          }`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -19,9 +31,15 @@ export default function LeftBar() {
               d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
             />
           </svg>
-        </div>
+        </Link>
 
-        <div id="home">
+        <Link
+          href={"/"}
+          id="home"
+          className={`hover:cursor-pointer   hover:text-primaryRed   ${
+            page == "/" ? "text-primaryRed" : "text-white"
+          } `}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -36,22 +54,36 @@ export default function LeftBar() {
               d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
             />
           </svg>
-        </div>
-        <div id="explore">
+        </Link>
+        <Link
+          href={"explore"}
+          id="explore"
+          className={` hover:text-primaryRed hover:cursor-pointer ${
+            page == "/explore" ? "text-primaryRed" : "text-white"
+          }`}
+        >
           <svg
-            width="32"
-            height="32"
-            viewBox="0 0 20 20"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
           >
             <path
-              d="M10 0C4.47768 0 0 4.47768 0 10C0 15.5223 4.47768 20 10 20C15.5223 20 20 15.5223 20 10C20 4.47768 15.5223 0 10 0ZM10 18.3036C5.41518 18.3036 1.69643 14.5848 1.69643 10C1.69643 5.41518 5.41518 1.69643 10 1.69643C14.5848 1.69643 18.3036 5.41518 18.3036 10C18.3036 14.5848 14.5848 18.3036 10 18.3036ZM14.4286 5.17634C14.3412 5.14218 14.2479 5.12558 14.154 5.1275C14.0602 5.12941 13.9676 5.1498 13.8817 5.1875L7.83259 7.83482L5.1875 13.8839C5.10714 14.067 5.10714 14.2746 5.1875 14.4576C5.26339 14.6317 5.40402 14.7679 5.58259 14.8371C5.66741 14.8705 5.75446 14.8862 5.84375 14.8862C5.94196 14.8862 6.03795 14.8661 6.12946 14.8259L12.1786 12.1786L14.8237 6.12946C14.8623 6.04118 14.8826 5.94602 14.8835 5.84967C14.8845 5.75333 14.8659 5.65779 14.829 5.56879C14.7921 5.47978 14.7377 5.39915 14.6688 5.33171C14.6 5.26427 14.5183 5.21143 14.4286 5.17634ZM11.4464 10.5L12.0312 11.0848L11.0848 12.0312L10.5 11.4464L7.05357 12.9554L8.56027 9.50893L7.99107 8.9375L8.9375 7.99107L9.5067 8.56027L12.9554 7.05357L11.4464 10.5ZM8.9375 7.99107L7.99107 8.9375L8.56027 9.50893L10.5 11.4464L11.0848 12.0312L12.0312 11.0848L11.4464 10.5L9.50893 8.56027L8.9375 7.99107Z"
-              fill="#ffffff"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5"
             />
           </svg>
-        </div>
-        <div id="stat">
+        </Link>
+        <Link
+          href={"analyst"}
+          id="stat"
+          className={` hover:text-primaryRed cursor-pointer  ${
+            page == "/analyst" ? "text-primaryRed " : "text-white"
+          }`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -66,8 +98,14 @@ export default function LeftBar() {
               d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
             />
           </svg>
-        </div>
-        <div id="pinned">
+        </Link>
+        <Link
+          href={"bookmark"}
+          id="pinned"
+          className={` hover:text-primaryRed cursor-pointer ${
+            page == "/bookmark" ? "text-primaryRed" : "text-white"
+          }`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -82,8 +120,14 @@ export default function LeftBar() {
               d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
             />
           </svg>
-        </div>
-        <div id="chat">
+        </Link>
+        <Link
+          href={"message"}
+          id="chat"
+          className={` hover:text-primaryRed cursor-pointer  ${
+            page == "/message" ? "text-primaryRed" : "text-white"
+          }`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -98,8 +142,14 @@ export default function LeftBar() {
               d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
             />
           </svg>
-        </div>
-        <div id="setting">
+        </Link>
+        <Link
+          href={"setting"}
+          id="setting"
+          className={` hover:text-primaryRed cursor-pointer ${
+            page == "/setting" ? "text-primaryRed" : "text-white"
+          }`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -119,7 +169,7 @@ export default function LeftBar() {
               d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
             />
           </svg>
-        </div>
+        </Link>
       </aside>
     </>
   );

@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import { avatarImg, postImage1 } from "../../public";
+import { avatarImg, noImage, postImage1 } from "../../public";
 import { it } from "node:test";
 
 export default function Center() {
@@ -8,6 +8,7 @@ export default function Center() {
     nama: string;
     tanggal: string;
     content: string;
+    img: StaticImageData;
   }
   const datas: post[] = [
     {
@@ -16,6 +17,7 @@ export default function Center() {
       tanggal: "02/03/2023",
       content:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi laborum velit sint eius fugit facilis nobis recusandae eveniet quidem quo et dolorem soluta, ratione distinctio autem! Vero eligendi deleniti distinctio?",
+      img: noImage,
     },
     {
       id: 2,
@@ -23,6 +25,7 @@ export default function Center() {
       tanggal: "03/03/2023",
       content:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi laborum velit sint eius fugit facilis nobis recusandae eveniet quidem quo et dolorem soluta, ratione distinctio autem! Vero eligendi deleniti distinctio?",
+      img: postImage1,
     },
     {
       id: 3,
@@ -30,6 +33,7 @@ export default function Center() {
       tanggal: "02/03/2023",
       content:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi laborum velit sint eius fugit facilis nobis recusandae eveniet quidem quo et dolorem soluta, ratione distinctio autem! Vero eligendi deleniti distinctio?",
+      img: postImage1,
     },
   ];
   return (
@@ -126,7 +130,7 @@ export default function Center() {
           </h1>
           <div className="py-3">{item.content}</div>
           <div>
-            <Image className="rounded-md" src={postImage1} alt="post-1" />
+            <Image className="rounded-md" src={item.img} alt="post-1" />
           </div>
           <div className="flex flex-row justify-between pt-5  px-5">
             <div className="flex flex-row gap-2">

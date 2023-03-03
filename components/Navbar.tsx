@@ -35,9 +35,9 @@ export default function Navbar() {
                 </svg>
               </div>
               <input
-                type="search"
+                type="input"
                 id="default-search"
-                className=" font-poppins block w-full px-4 py-2 pl-10 md:pr-32 lg:pr-52 text-sm text-white rounded-lg bg-primaryBg border-transparent focus:border-transparent focus:ring-white outline-none"
+                className="bg-text font-poppins block w-full px-4 py-2 pl-10 md:pr-32 lg:pr-52 text-sm text-white rounded-lg bg-primaryBg border-transparent focus:border-transparent focus:ring-white outline-none"
                 placeholder="Search "
                 required
               />
