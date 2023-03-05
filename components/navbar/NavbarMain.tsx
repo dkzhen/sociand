@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { avatarImg } from "../public";
+import { avatarImg } from "../../public";
+import Link from "next/link";
 export default function Navbar() {
   return (
     <>
-      <nav className="bg-primary items-center text-white px-4 md:ox-0 flex flex-row justify-between ">
+      <nav className="fixed top-0 left-0 right-0 bg-primary items-center z-50 text-white px-4 md:ox-0 flex flex-row justify-between ">
         <section
           className="font-Roboto font-semibold pl-3 md:pl-10 md:text-2xl text-lg"
           id="logo"
@@ -44,16 +45,21 @@ export default function Navbar() {
             </div>
           </form>
         </section>
-        <section id="profile" className="pr-3 md:pr-10 py-2">
-          <div className="flex flex-row items-center space-x-2">
-            <div className="font-poppins pr-1 md:pr-5 md:text-lg">Zhen</div>
-            <div className="">
+        <section id="profile" className="pr-3 md:pr-10 py-2 ">
+          <div className="flex flex-row items-center space-x-2 ">
+            <Link
+              href={"profile"}
+              className="font-poppins pr-1 md:pr-5 md:text-lg"
+            >
+              Zhen
+            </Link>
+            <Link href={"profile"} className="z-10">
               <Image
                 className="rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px]"
                 src={avatarImg}
                 alt={"avatar"}
               />
-            </div>
+            </Link>
           </div>
         </section>
       </nav>

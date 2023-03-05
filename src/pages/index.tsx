@@ -1,5 +1,11 @@
 import Head from "next/head";
-import { Navbar, LeftBar, Center, RightBar, BottomBar } from "../../components";
+import {
+  NavbarMain,
+  LeftBar,
+  Center,
+  RightBar,
+  BottomBar,
+} from "../../components";
 export default function index() {
   return (
     <>
@@ -7,8 +13,9 @@ export default function index() {
         <title>Sociand</title>
       </Head>
       <div className="relative">
-        <div className="fixed top-0 left-0 right-0">
-          <Navbar />
+        <div className="">
+          {/* <div className=""> */}
+          <NavbarMain />
         </div>
 
         <div className="bg-primaryBg text-white flex flex-row justify-between ">

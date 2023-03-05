@@ -1,15 +1,19 @@
 import Image, { StaticImageData } from "next/image";
-import { avatarImg, noImage, postImage1 } from "../../public";
-import { it } from "node:test";
+import { avatarImg, postImage1 } from "../../public";
+import Link from "next/link";
 
 export default function Center() {
+  const handleError = (e: any) => {
+    e.target.style.display = "none";
+  };
   interface post {
     id: number;
     nama: string;
     tanggal: string;
     content: string;
-    img: StaticImageData;
+    img: StaticImageData | "";
   }
+
   const datas: post[] = [
     {
       id: 1,
@@ -17,7 +21,7 @@ export default function Center() {
       tanggal: "02/03/2023",
       content:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi laborum velit sint eius fugit facilis nobis recusandae eveniet quidem quo et dolorem soluta, ratione distinctio autem! Vero eligendi deleniti distinctio?",
-      img: noImage,
+      img: "",
     },
     {
       id: 2,
@@ -48,10 +52,24 @@ export default function Center() {
             src={avatarImg}
             alt="avatar"
           />
-          <p className="font-poppins">How are you?</p>
+          <form className=" w-full">
+            <label
+              htmlFor="default-search"
+              className="mb-2 text-sm font-medium text-white sr-only "
+            ></label>
+            <div className="relative">
+              <input
+                type="search"
+                id="default-search"
+                className=" font-poppins block  px-4 py-2  w-full text-sm text-white rounded-xl bg-primaryBg border-transparent focus:border-transparent focus:ring-white outline-none"
+                placeholder=" How are you today? "
+                required
+              />
+            </div>
+          </form>
         </div>
         <div className="flex flex-row items-center justify-between px-10 py-3">
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -68,7 +86,7 @@ export default function Center() {
 
             <p>Video</p>
           </div>
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -91,7 +109,7 @@ export default function Center() {
 
             <p>Images</p>
           </div>
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -124,13 +142,20 @@ export default function Center() {
               alt="avatar"
             />
             <div className="flex flex-col">
-              <p className="font-poppins text-xl">{item.nama}</p>
+              <Link href={"profile"} className="font-poppins text-xl">
+                {item.nama}
+              </Link>
               <time className="font-poppins text-sm">{item.tanggal}</time>
             </div>
           </h1>
           <div className="py-3">{item.content}</div>
           <div>
-            <Image className="rounded-md" src={item.img} alt="post-1" />
+            <Image
+              className="rounded-md"
+              src={item.img || ""}
+              alt="post-1"
+              onError={handleError}
+            />
           </div>
           <div className="flex flex-row justify-between pt-5  px-5">
             <div className="flex flex-row gap-2">

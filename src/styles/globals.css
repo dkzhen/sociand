@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    .text-32px {
+    font-size: 32px;
+    line-height: 36px;
+}
+    .text-24px {
+    font-size: 24px;
+    line-height: 28px;
+}
+}
