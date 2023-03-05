@@ -79,7 +79,7 @@ export default function index() {
       <Head>
         <title> Dani Kurniawan</title>
       </Head>
-      <main id="all" className="bg-primaryBg text-white font-poppins">
+      <main id="all" className="bg-primaryBg text-white font-poppins pb-5">
         <div className="bg-primaryBg text-white justify-center md:justify-start flex md:flex-row">
           <div className=" h-screen sticky top-0">
             <LeftBarProfile />
